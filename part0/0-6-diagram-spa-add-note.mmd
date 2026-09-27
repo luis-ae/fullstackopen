@@ -1,0 +1,17 @@
+---
+config:
+  theme: base
+---
+sequenceDiagram
+    participant browser
+    participant server
+    Note over browser, server: the diagram only shows the interaction AFTER the initial page load
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: The browser adds the item to the list and sends the data to the server.
+    activate server
+    server-->>browser: 201 Created
+    deactivate server
+    Note left of server: The server answers with a 201 HTTP code (Created) 
+
+   
